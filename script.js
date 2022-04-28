@@ -61,3 +61,21 @@ document.body.addEventListener('mouseleave', (e) => {
     mouseDot.style.opacity = "0"
 })
 // End of Mouse Circle
+
+// Main Button
+const mainBtn = document.querySelector('.main-btn')
+
+let ripple;
+
+mainBtn.addEventListener('mouseenter', (e) => {
+    const left = e.clientX - e.target.getBoundingClientRect().left
+    const top = e.clientX - e.target.getBoundingClientRect().top
+    console.log('mouseEnterCircleRed left:', left)
+
+    ripple = document.createElement('div')
+    ripple.classList.add("ripple")
+    ripple.style.left = `${left}px`
+    ripple.style.top = `${top}px`
+    mainBtn.prepend(ripple)
+})
+// End of Main Button
